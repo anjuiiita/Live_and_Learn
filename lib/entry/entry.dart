@@ -13,11 +13,11 @@ class _LiveAndLearnEntryState extends State<LiveAndLearnEntry> {
   void initState() {
     super.initState();
 
-    final channelName = 'app.sudo.land/live_and_learn/example';
-    final methodChannel = MethodChannel(channelName);
-    methodChannel.setMethodCallHandler((MethodCall call) async {
-      print(call);
-    });
+    // final channelName = 'app.sudo.land/live_and_learn/example';
+    // final methodChannel = MethodChannel(channelName);
+    // methodChannel.setMethodCallHandler((MethodCall call) async {
+    //   print(call);
+    // });
   }
 
   @override
