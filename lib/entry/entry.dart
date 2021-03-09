@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:live_and_learn/example.dart';
+import 'package:live_and_learn/entry/example.dart';
 
 class LiveAndLearnEntry extends StatelessWidget {
   @override
