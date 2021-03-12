@@ -20,19 +20,19 @@ class ExampleView extends StatelessWidget {
             ),
             Semantics(
               label: "Welcome Text",
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) {
-                      return TutorialView(
-                        tutorial: sendMessageTutorial,
-                      );
-                    },
-                  ),
-                );
-              },
               child: ListTile(
                 title: Text("Try press here with VoiceOver"),
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return TutorialView(
+                          tutorial: sendMessageTutorial,
+                        );
+                      },
+                    ),
+                  );
+                },
               ),
             ),
           ],
