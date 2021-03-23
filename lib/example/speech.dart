@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:live_and_learn/speech/recongnite.dart';
+import 'package:speech_to_text/speech_recognition_error.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
 
 class SpeechExampleView extends StatefulWidget {
   @override
@@ -7,16 +9,56 @@ class SpeechExampleView extends StatefulWidget {
 }
 
 class _SpeechExampleViewState extends State<SpeechExampleView> {
-  final SpeechRecongiteController _speechController =
-      SpeechRecongiteController();
+  final SpeechToText _speechToText = SpeechToText();
+
+  @override
+  void initState() {
+    super.initState();
+    this._speechToText.initialize(
+      onStatus: (String status) {
+        print(status);
+      },
+      onError: (SpeechRecognitionError error) {
+        print(error);
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    this._speechToText.cancel();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () async {
+            if (this._speechToText.isAvailable) {
+              print('Started');
+              final anyResult = await this._speechToText.listen(
+                onResult: (SpeechRecognitionResult result) {
+                  print(result);
+                },
+              );
+              print(anyResult);
+            }
+          },
           child: Text("Start"),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            this._speechToText.stop();
+          },
+          child: Text("Stop"),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            print(this._speechToText.isAvailable);
+          },
+          child: Text("Check Status"),
         ),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:live_and_learn/example/message.dart';
+import 'package:live_and_learn/example/speech.dart';
 import 'package:live_and_learn/tutorial/tutorial.dart';
 
 class ExampleView extends StatelessWidget {
@@ -35,6 +36,7 @@ class ExampleView extends StatelessWidget {
                 },
               ),
             ),
+            SpeechExampleView(),
           ],
         ),
       ),
