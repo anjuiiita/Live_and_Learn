@@ -15,13 +15,14 @@ class _SpeechExampleViewState extends State<SpeechExampleView> {
   void initState() {
     super.initState();
     this._speechToText.initialize(
-      onStatus: (String status) {
-        print(status);
-      },
-      onError: (SpeechRecognitionError error) {
-        print(error);
-      },
-    );
+          onStatus: (String status) {
+            print(status);
+          },
+          onError: (SpeechRecognitionError error) {
+            print(error);
+          },
+          debugLogging: true,
+        );
   }
 
   @override
@@ -38,12 +39,11 @@ class _SpeechExampleViewState extends State<SpeechExampleView> {
           onPressed: () async {
             if (this._speechToText.isAvailable) {
               print('Started');
-              final anyResult = await this._speechToText.listen(
+              this._speechToText.listen(
                 onResult: (SpeechRecognitionResult result) {
                   print(result);
                 },
               );
-              print(anyResult);
             }
           },
           child: Text("Start"),
