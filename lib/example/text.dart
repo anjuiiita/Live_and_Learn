@@ -7,17 +7,35 @@ class TextExampleView extends StatefulWidget {
 }
 
 class _TextExampleViewState extends State<TextExampleView> {
-  final FlutterTts flutterTts = FlutterTts();
+  final FlutterTts _flutterTts = FlutterTts();
 
   @override
   void initState() {
     super.initState();
 
-    this.flutterTts.setSharedInstance(true);
+    this._flutterTts.setSharedInstance(true);
+    this._flutterTts.setIosAudioCategory(
+      IosTextToSpeechAudioCategory.playAndRecord,
+      [
+        IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+        IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+        IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+      ],
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        ElevatedButton(
+          onPressed: () async {
+            this._flutterTts.speak('hello');
+            await this._flutterTts.awaitSpeakCompletion(true);
+          },
+          child: Text("Speak"),
+        ),
+      ],
+    );
   }
 }
