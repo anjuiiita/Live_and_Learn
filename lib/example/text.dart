@@ -9,6 +9,9 @@ class TextExampleView extends StatefulWidget {
 class _TextExampleViewState extends State<TextExampleView> {
   final FlutterTts _flutterTts = FlutterTts();
 
+  bool _playing = false;
+  String _speaking = "";
+
   @override
   void initState() {
     super.initState();
@@ -22,18 +25,42 @@ class _TextExampleViewState extends State<TextExampleView> {
         IosTextToSpeechAudioCategoryOptions.mixWithOthers,
       ],
     );
+    this._flutterTts.setCompletionHandler(() {
+      this.setState(() {
+        this._playing = false;
+      });
+    });
+    this._flutterTts.setCancelHandler(() {
+      this.setState(() {
+        this._playing = false;
+      });
+    });
+    this._flutterTts.setProgressHandler((text, start, end, word) {
+      this.setState(() {
+        this._speaking = word;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Text(this._playing ? 'Playing ${this._speaking}' : 'Not Playing'),
         ElevatedButton(
           onPressed: () async {
-            this._flutterTts.speak('hello');
-            await this._flutterTts.awaitSpeakCompletion(true);
+            print(await this._flutterTts.speak('I am a pony'));
+            this.setState(() {
+              this._playing = true;
+            });
           },
           child: Text("Speak"),
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            print(await this._flutterTts.stop());
+          },
+          child: Text("Stop"),
         ),
       ],
     );
