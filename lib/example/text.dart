@@ -49,7 +49,7 @@ class _TextExampleViewState extends State<TextExampleView> {
         Text(this._playing ? 'Playing ${this._speaking}' : 'Not Playing'),
         ElevatedButton(
           onPressed: () async {
-            print(await this._flutterTts.speak('I am a pony'));
+            await this._flutterTts.speak('I am a pony');
             this.setState(() {
               this._playing = true;
             });
@@ -58,7 +58,7 @@ class _TextExampleViewState extends State<TextExampleView> {
         ),
         ElevatedButton(
           onPressed: () async {
-            print(await this._flutterTts.stop());
+            await this._flutterTts.stop();
           },
           child: Text("Stop"),
         ),
