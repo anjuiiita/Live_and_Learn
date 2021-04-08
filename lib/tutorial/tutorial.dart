@@ -25,6 +25,19 @@ class _TutorialViewState extends State<TutorialView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: ListTile(
+          contentPadding: const EdgeInsets.all(0.0),
+          title: Text(
+            widget.tutorial.name,
+            style: TextStyle(
+              color: Theme.of(context).cardColor,
+            ),
+          ),
+          subtitle: Text(widget.tutorial.application),
+        ),
+      ),
+    );
   }
 }

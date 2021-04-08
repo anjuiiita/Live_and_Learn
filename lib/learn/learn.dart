@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_and_learn/learn/list.dart';
 
 class LearnSubView extends StatefulWidget {
   @override
@@ -40,7 +41,15 @@ class _LearnSubViewState extends State<LearnSubView> {
               child: ListTile(
                 leading: Icon(Icons.more),
                 title: Text("View all tutorials"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return LeanListView();
+                      },
+                    ),
+                  );
+                },
               ),
             ),
           ],
