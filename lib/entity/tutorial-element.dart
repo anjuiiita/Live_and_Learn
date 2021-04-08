@@ -8,4 +8,5 @@ abstract class TutorialElement {
   });
 
   Widget build();
+  String read();
 }

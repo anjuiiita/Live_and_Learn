@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:live_and_learn/entity/tutorial-step.dart';
 import 'package:live_and_learn/entity/tutorial.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -15,16 +16,47 @@ class TutorialView extends StatefulWidget {
 }
 
 class _TutorialViewState extends State<TutorialView> {
+  final FlutterTts _flutterTts = FlutterTts();
+
+  bool _playing = false;
+  String _speaking = "";
+
   int _currentStep = 0;
 
   @override
   void initState() {
     super.initState();
+
+    this._flutterTts.setSharedInstance(true);
+    this._flutterTts.setIosAudioCategory(
+      IosTextToSpeechAudioCategory.playAndRecord,
+      [
+        IosTextToSpeechAudioCategoryOptions.allowBluetooth,
+        IosTextToSpeechAudioCategoryOptions.allowBluetoothA2DP,
+        IosTextToSpeechAudioCategoryOptions.mixWithOthers,
+      ],
+    );
+    this._flutterTts.setCompletionHandler(() {
+      this.setState(() {
+        this._playing = false;
+      });
+    });
+    this._flutterTts.setCancelHandler(() {
+      this.setState(() {
+        this._playing = false;
+      });
+    });
+    this._flutterTts.setProgressHandler((text, start, end, word) {
+      this.setState(() {
+        this._speaking = word;
+      });
+    });
   }
 
   @override
   void dispose() {
     super.dispose();
+    this._flutterTts.stop();
   }
 
   @override
@@ -97,7 +129,16 @@ class _TutorialViewState extends State<TutorialView> {
           child: ListView(
             children: [
               Container(
-                child: widget.tutorial.steps[this._currentStep].build(),
+                child: widget.tutorial.steps[this._currentStep].build(
+                  (String content) async {
+                    await this._flutterTts.speak(content);
+                    this.setState(
+                      () {
+                        this._playing = true;
+                      },
+                    );
+                  },
+                ),
               ),
             ],
           ),

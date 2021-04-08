@@ -12,14 +12,19 @@ class TutorialStep {
     @required this.elements,
   });
 
-  Widget build() {
+  Widget build(void Function(String content) readContent) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: this.elements.map(
         (TutorialElement element) {
           return Card(
-            child: element.build(),
+            child: InkWell(
+              child: element.build(),
+              onTap: () {
+                readContent(element.read());
+              },
+            ),
           );
         },
       ).toList(),

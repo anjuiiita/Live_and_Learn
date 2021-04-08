@@ -23,4 +23,8 @@ class TutorialTextElement extends TutorialElement {
       ),
     );
   }
+
+  String read() {
+    return this.value;
+  }
 }
