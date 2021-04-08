@@ -6,7 +6,7 @@ class TutorialEntity {
   final String application;
   final String schema;
 
-  final List<TutorialStepEntity> steps;
+  final List<TutorialStep> steps;
 
   final bool android;
   final bool ios;
