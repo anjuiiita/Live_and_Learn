@@ -116,6 +116,12 @@ class _TutorialViewState extends State<TutorialView> {
             subtitle: lastStep == null
                 ? Text("Launch Application")
                 : Text("Back to Previous Step"),
+            trailing: Text(
+              "${this._currentStep + 1}/${widget.tutorial.steps.length}",
+              style: TextStyle(
+                fontSize: 18.0,
+              ),
+            ),
             onTap: () {
               if (lastStep == null) {
                 this._launchSchema();
