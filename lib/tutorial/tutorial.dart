@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:live_and_learn/entity/tutorial-step.dart';
 import 'package:live_and_learn/entity/tutorial.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class TutorialView extends StatefulWidget {
   final TutorialEntity tutorial;
@@ -83,6 +84,7 @@ class _TutorialViewState extends State<TutorialView> {
                 : Text("Back to Previous Step"),
             onTap: () {
               if (lastStep == null) {
+                this._launchSchema();
               } else {
                 this.setState(() {
                   this._currentStep--;
@@ -92,18 +94,12 @@ class _TutorialViewState extends State<TutorialView> {
           ),
         ),
         Expanded(
-          child: Card(
-            child: ListView(
-              children: [
-                Container(
-                  padding: const EdgeInsets.only(
-                    top: 8.0,
-                    bottom: 8.0,
-                  ),
-                  child: widget.tutorial.steps[this._currentStep].build(),
-                ),
-              ],
-            ),
+          child: ListView(
+            children: [
+              Container(
+                child: widget.tutorial.steps[this._currentStep].build(),
+              ),
+            ],
           ),
         ),
         Card(
@@ -119,6 +115,7 @@ class _TutorialViewState extends State<TutorialView> {
             ),
             onTap: () {
               if (nextStep == null) {
+                this._launchSchema();
               } else {
                 this.setState(() {
                   this._currentStep = this._currentStep + 1;
@@ -129,5 +126,14 @@ class _TutorialViewState extends State<TutorialView> {
         ),
       ],
     );
+  }
+
+  void _launchSchema() async {
+    final bool launchCheck = await canLaunch(widget.tutorial.schema);
+
+    if (!launchCheck) {
+      return;
+    }
+    await launch(widget.tutorial.schema);
   }
 }

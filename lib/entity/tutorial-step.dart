@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:live_and_learn/entity/tutorial-element.dart';
 
@@ -13,10 +14,15 @@ class TutorialStep {
 
   Widget build() {
     return Column(
-      children: this
-          .elements
-          .map((TutorialElement element) => element.build())
-          .toList(),
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: this.elements.map(
+        (TutorialElement element) {
+          return Card(
+            child: element.build(),
+          );
+        },
+      ).toList(),
     );
   }
 }

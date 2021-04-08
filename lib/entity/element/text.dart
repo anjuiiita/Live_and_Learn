@@ -12,8 +12,14 @@ class TutorialTextElement extends TutorialElement {
 
   Widget build() {
     return Container(
+      padding: const EdgeInsets.all(
+        8.0,
+      ),
       child: Text(
         this.value,
+        style: TextStyle(
+          fontSize: 15.0,
+        ),
       ),
     );
   }
