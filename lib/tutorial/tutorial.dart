@@ -18,7 +18,9 @@ class TutorialView extends StatefulWidget {
 class _TutorialViewState extends State<TutorialView> {
   final FlutterTts _flutterTts = FlutterTts();
 
+  // ignore: unused_field
   bool _playing = false;
+  // ignore: unused_field
   String _speaking = "";
 
   int _currentStep = 0;
@@ -118,9 +120,7 @@ class _TutorialViewState extends State<TutorialView> {
               if (lastStep == null) {
                 this._launchSchema();
               } else {
-                this.setState(() {
-                  this._currentStep--;
-                });
+                this._stepChange(-1);
               }
             },
           ),
@@ -158,9 +158,7 @@ class _TutorialViewState extends State<TutorialView> {
               if (nextStep == null) {
                 this._launchSchema();
               } else {
-                this.setState(() {
-                  this._currentStep = this._currentStep + 1;
-                });
+                this._stepChange(1);
               }
             },
           ),
@@ -169,7 +167,16 @@ class _TutorialViewState extends State<TutorialView> {
     );
   }
 
+  void _stepChange(int value) async {
+    await this._flutterTts.stop();
+
+    this.setState(() {
+      this._currentStep = this._currentStep + value;
+    });
+  }
+
   void _launchSchema() async {
+    await this._flutterTts.stop();
     final bool launchCheck = await canLaunch(widget.tutorial.schema);
 
     if (!launchCheck) {

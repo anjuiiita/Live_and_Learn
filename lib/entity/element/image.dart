@@ -13,9 +13,34 @@ class TutorialImageElement extends TutorialElement {
         );
 
   Widget build() {
-    return Container(
-      child: Image.network(
+    final List<Widget> imageChildren = [
+      Image.network(
         this.url,
+        height: 180,
+      ),
+    ];
+
+    if (this.explanation != null) {
+      imageChildren.add(
+        Container(
+          padding: const EdgeInsets.only(
+            bottom: 8.0,
+            left: 8.0,
+            right: 8.0,
+          ),
+          child: Text(
+            this.explanation,
+            style: TextStyle(
+              fontSize: 15.0,
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Container(
+      child: Column(
+        children: imageChildren,
       ),
     );
   }
@@ -24,6 +49,7 @@ class TutorialImageElement extends TutorialElement {
     if (this.explanation == null) {
       return "An unlabeled image";
     }
+
     return "An image of ${this.explanation}";
   }
 }
