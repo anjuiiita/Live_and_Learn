@@ -16,6 +16,14 @@ class _IndexViewState extends State<IndexView> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Live And Learn"),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed("/example");
+            },
+            icon: Icon(Icons.question_answer),
+          ),
+        ],
       ),
       body: this._buildBody(),
       bottomNavigationBar: BottomNavigationBar(

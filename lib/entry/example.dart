@@ -11,7 +11,7 @@ class ExampleView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Live And Learn"),
+        title: Text("Live And Learn Examples"),
       ),
       body: Container(
         child: ListView(
