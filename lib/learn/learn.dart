@@ -33,6 +33,16 @@ class _LearnSubViewState extends State<LearnSubView> {
               height: 8.0,
             ),
             Text("Search Tutorial"),
+            SizedBox(
+              height: 16.0,
+            ),
+            Card(
+              child: ListTile(
+                leading: Icon(Icons.more),
+                title: Text("View all tutorials"),
+                onTap: () {},
+              ),
+            ),
           ],
         ),
       ),
