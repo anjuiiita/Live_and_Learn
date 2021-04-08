@@ -35,10 +35,10 @@ class _LiveAndLearnEntryState extends State<LiveAndLearnEntry> {
       theme: ThemeData(),
       darkTheme: ThemeData.dark(),
       routes: {
-        LiveAndLearnIndexView.route: (context) => LiveAndLearnIndexView(),
+        IndexView.route: (context) => IndexView(),
         ExampleView.route: (context) => ExampleView(),
       },
-      initialRoute: LiveAndLearnIndexView.route,
+      initialRoute: IndexView.route,
     );
   }
 }
