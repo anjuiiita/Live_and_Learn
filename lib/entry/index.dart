@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class LiveAndLearnIndexView extends StatefulWidget {
+  static const String route = '/index';
+
   @override
   _LiveAndLearnIndexViewState createState() => _LiveAndLearnIndexViewState();
 }
 
 class _LiveAndLearnIndexViewState extends State<LiveAndLearnIndexView> {
-  int _selectedIndex = 1;
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {

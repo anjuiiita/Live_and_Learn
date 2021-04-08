@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:live_and_learn/entry/example.dart';
+import 'package:live_and_learn/entry/index.dart';
 
 class LiveAndLearnEntry extends StatefulWidget {
   @override
@@ -34,9 +35,10 @@ class _LiveAndLearnEntryState extends State<LiveAndLearnEntry> {
       theme: ThemeData(),
       darkTheme: ThemeData.dark(),
       routes: {
+        LiveAndLearnIndexView.route: (context) => LiveAndLearnIndexView(),
         ExampleView.route: (context) => ExampleView(),
       },
-      initialRoute: ExampleView.route,
+      initialRoute: LiveAndLearnIndexView.route,
     );
   }
 }
