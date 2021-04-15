@@ -24,21 +24,31 @@ class _LeanListViewState extends State<LeanListView> {
   }
 
   Widget _buildTile(TutorialEntity tutorial) {
-    return ListTile(
-      leading: Icon(Icons.sports_handball),
-      title: Text(tutorial.name),
-      subtitle: Text(tutorial.application),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (BuildContext context) {
-              return TutorialView(
-                tutorial: exampleTutorial,
-              );
-            },
-          ),
-        );
-      },
+    return Semantics(
+      value:
+          "Tutorial name: ${tutorial.name}, application name: ${tutorial.application}",
+      child: ListTile(
+        leading: Icon(Icons.sports_handball),
+        title: Semantics(
+          value: "Tutorial Name",
+          child: Text(tutorial.name),
+        ),
+        subtitle: Semantics(
+          value: "Application Name",
+          child: Text(tutorial.application),
+        ),
+        onTap: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return TutorialView(
+                  tutorial: exampleTutorial,
+                );
+              },
+            ),
+          );
+        },
+      ),
     );
   }
 }
