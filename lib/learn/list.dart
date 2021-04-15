@@ -17,24 +17,27 @@ class _LeanListViewState extends State<LeanListView> {
       ),
       body: ListView(
         children: [
-          this._buildTile(exampleTutorial),
+          this._buildTile(exampleTutorial, 0, 1),
         ],
       ),
     );
   }
 
-  Widget _buildTile(TutorialEntity tutorial) {
+  Widget _buildTile(TutorialEntity tutorial, int index, int total) {
     return Semantics(
       value:
           "Tutorial name: ${tutorial.name}, application name: ${tutorial.application}",
+      hint: "Part of tutorial list, tutorial ${index + 1} of $total",
       child: ListTile(
         leading: Icon(Icons.sports_handball),
         title: Semantics(
           value: "Tutorial Name",
+          hint: "Double click to activate tutorial",
           child: Text(tutorial.name),
         ),
         subtitle: Semantics(
           value: "Application Name",
+          hint: "Double click to activate tutorial",
           child: Text(tutorial.application),
         ),
         onTap: () {
