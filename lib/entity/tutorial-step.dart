@@ -16,18 +16,32 @@ class TutorialStep {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: this.elements.map(
-        (TutorialElement element) {
-          return Card(
-            child: InkWell(
-              child: element.build(),
-              onTap: () {
-                readContent(element.read());
-              },
-            ),
-          );
-        },
-      ).toList(),
+      children: this
+          .elements
+          .asMap()
+          .map(
+            (int index, TutorialElement element) {
+              return MapEntry(
+                index,
+                Semantics(
+                  child: Card(
+                    child: Semantics(
+                      value: "Element ${(index + 1).toString()}",
+                      hint: element.type,
+                      child: InkWell(
+                        child: element.build(),
+                        onTap: () {
+                          readContent(element.read());
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            },
+          )
+          .values
+          .toList(),
     );
   }
 }
