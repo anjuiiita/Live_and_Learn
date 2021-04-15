@@ -15,25 +15,32 @@ class _LearnSubViewState extends State<LearnSubView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Ink(
-              decoration: ShapeDecoration(
-                color: Theme.of(context).accentColor,
-                shape: CircleBorder(),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: IconButton(
-                  iconSize: 48.0,
-                  icon: const Icon(Icons.search),
-                  color: Colors.white,
-                  onPressed: () {},
+            Semantics(
+              label: "Search tutorial",
+              child: Ink(
+                decoration: ShapeDecoration(
+                  color: Theme.of(context).accentColor,
+                  shape: CircleBorder(),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: IconButton(
+                    iconSize: 48.0,
+                    icon: const Icon(Icons.search),
+                    color: Colors.white,
+                    onPressed: () {},
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 8.0,
             ),
-            Text("Search Tutorial"),
+            Semantics(
+              label: "Text label",
+              hint: "Tap the search button above to activate",
+              child: Text("Search Tutorial"),
+            ),
             SizedBox(
               height: 16.0,
             ),
