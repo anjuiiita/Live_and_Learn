@@ -15,10 +15,15 @@ class TutorialTextElement extends TutorialElement {
       padding: const EdgeInsets.all(
         8.0,
       ),
-      child: Text(
-        this.value,
-        style: TextStyle(
-          fontSize: 15.0,
+      child: Semantics(
+        child: Text(
+          this.value,
+          semanticsLabel: this.value.length > 20
+              ? "${this.value.substring(0, 20)} and more"
+              : this.value,
+          style: TextStyle(
+            fontSize: 15.0,
+          ),
         ),
       ),
     );
