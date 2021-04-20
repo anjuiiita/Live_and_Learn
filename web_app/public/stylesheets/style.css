@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aliceblue !important;
+}
+
+a {
+  color: #00B7FF;
+}
+p, h6{
+  display: inline-block; /* display on the same line */
+}
+
+h6{
+  font-weight: bold;
+}
