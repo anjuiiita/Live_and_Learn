@@ -1,7 +1,7 @@
 # Welcome to Live and Learn 
 
 LiveAndLearn (LAL) is an open platform for senior adults to learn how to use mobile applications. 
-There are parts of this platform:
+There are two parts of this platform:
 1. Mobile app 
 2. Web app
 
