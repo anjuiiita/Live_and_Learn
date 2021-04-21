@@ -10,6 +10,12 @@ class TutorialTextElement extends TutorialElement {
           type: 'text',
         );
 
+  factory TutorialTextElement.fromMap(Map<String, dynamic> map) {
+    return TutorialTextElement(
+      map['value'],
+    );
+  }
+
   Widget build() {
     return Container(
       padding: const EdgeInsets.all(

@@ -12,6 +12,13 @@ class TutorialImageElement extends TutorialElement {
           type: 'image',
         );
 
+  factory TutorialImageElement.fromMap(Map<String, dynamic> map) {
+    return TutorialImageElement(
+      map['url'],
+      explanation: map['explanation'],
+    );
+  }
+
   Widget build() {
     final List<Widget> imageChildren = [
       Image.network(
