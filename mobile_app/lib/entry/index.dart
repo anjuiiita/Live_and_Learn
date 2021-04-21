@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:live_and_learn/history/history.dart';
 import 'package:live_and_learn/learn/learn.dart';
+import 'package:live_and_learn/pattern/gmail.dart';
 
 class IndexView extends StatefulWidget {
   static const String route = '/index';
@@ -20,7 +21,13 @@ class _IndexViewState extends State<IndexView> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed("/example");
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return GMailPattern();
+                  },
+                ),
+              );
             },
             icon: Icon(Icons.question_answer),
           ),
