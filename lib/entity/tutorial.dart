@@ -19,4 +19,17 @@ class TutorialEntity {
     this.android = false,
     this.ios = false,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      "name": this.name,
+      "application": this.application,
+      "schema": this.schema,
+      "steps": this.steps.map((TutorialStep step) {
+        return step.toMap();
+      }).toList(),
+      "android": this.android,
+      "ios": this.ios,
+    };
+  }
 }

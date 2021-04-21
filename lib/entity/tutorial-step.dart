@@ -44,4 +44,13 @@ class TutorialStep {
           .toList(),
     );
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      "name": this.name,
+      "elements": this.elements.map((TutorialElement element) {
+        return element.toMap();
+      }).toList(),
+    };
+  }
 }

@@ -52,4 +52,12 @@ class TutorialImageElement extends TutorialElement {
 
     return "An image of ${this.explanation}";
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      "type": this.type,
+      "url": this.url,
+      "explanation": this.explanation,
+    };
+  }
 }

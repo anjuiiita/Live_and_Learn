@@ -32,4 +32,11 @@ class TutorialTextElement extends TutorialElement {
   String read() {
     return this.value;
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      "type": this.type,
+      "value": this.value,
+    };
+  }
 }

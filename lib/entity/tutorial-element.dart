@@ -9,4 +9,6 @@ abstract class TutorialElement {
 
   Widget build();
   String read();
+
+  Map<String, dynamic> toMap();
 }
