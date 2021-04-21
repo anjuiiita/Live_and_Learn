@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:live_and_learn/history/history.dart';
 import 'package:live_and_learn/learn/learn.dart';
 
 class IndexView extends StatefulWidget {
@@ -48,7 +49,7 @@ class _IndexViewState extends State<IndexView> {
       case 0:
         return LearnSubView();
       case 1:
-        return Container();
+        return HistorySubView();
     }
 
     return Container();
