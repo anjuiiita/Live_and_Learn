@@ -12,6 +12,17 @@ class TutorialStep {
     @required this.elements,
   });
 
+  factory TutorialStep.fromMap(Map<String, dynamic> map) {
+    final List<dynamic> elementList = map['elements'];
+
+    return TutorialStep(
+      name: map['name'],
+      elements: elementList.map((dynamic element) {
+        return TutorialElement.fromMap(element);
+      }).toList(),
+    );
+  }
+
   Widget build(void Function(String content) readContent) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

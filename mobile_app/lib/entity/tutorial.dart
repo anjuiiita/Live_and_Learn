@@ -20,6 +20,21 @@ class TutorialEntity {
     this.ios = false,
   });
 
+  factory TutorialEntity.fromMap(Map<String, dynamic> map) {
+    final List<dynamic> stepList = map['steps'];
+
+    return TutorialEntity(
+      name: map['name'],
+      application: map['application'],
+      schema: map['schema'],
+      steps: stepList.map((dynamic step) {
+        return TutorialStep.fromMap(step);
+      }).toList(),
+      android: map['android'] == null ? false : map['android'],
+      ios: map['ios'] == null ? false : map['ios'],
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return {
       "name": this.name,
