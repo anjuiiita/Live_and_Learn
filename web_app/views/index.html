@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/javascripts/script.js"></script>
+    <title>Live And Learn</title>
+    <link href="/images/Icon-192.png" rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <h2 class="text-center"><img src="/images/Icon-192.png" width="50px"/> Live and Learn </h2>
+        <hr>
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <header class="card-header">
+                        <h4 class="card-title mt-2">Create Tutorial</h4>
+                    </header>
+                    <article class="card-body">
+                        <form name="featureForm" method="post" action="/addFeature">
+                            <div class="form-group">
+                                <label>Name of Application </label>
+                                <input type="text" class="form-control" placeholder="Name" name="applicationName"/>
+                            </div>
+                            <div class="form-group" id="moreFeatures">
+                                <!-- new Feature to be added -->
+                            </div>
+                            <div class="form-group mt-5">
+                                <div class="row">
+                                <div class="col">
+                                    <button type="button" id="btn1" class="btn btn-primary btn-block"> Add New Feature </button>
+                                </div>
+                                <div class="col">
+                                    <button type="sumbit" id="btn2" class="btn btn-primary btn-block"> Save </button>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+                <div class="mt-5">
+                    <button type="button" id="btnList" class="btn btn-primary btn-block w-50">Show Tutorial List</button>
+                    <div id="featureList" class="mt-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
