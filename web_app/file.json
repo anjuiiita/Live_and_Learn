@@ -53,7 +53,7 @@
 					"There will be some friend suggestions, you can add some of them if you like."
 			]}]
 },
-{"data":[{
+{
 	"applicationName":"Uber",
 	"features":[
 			{"name":"Ride",
@@ -100,5 +100,4 @@
 					"There will be some friend suggestions from your phone contact, you can add some of them if you like."
 			]}]
 }
-]}
 ]}
