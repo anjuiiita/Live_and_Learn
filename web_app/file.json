@@ -1,54 +1,104 @@
-<<<<<<< Updated upstream
-{
-	"data": [
-		{
-			"applicationName": "Gmail",
-			"features": [
-				{
-					"name": "Chat",
-					"steps": [
-						"On the left bottom part of Gmail, there will be list of persons online",
-						"Click on the name of person you want to talk to",
-						"A chat window will open, Type the text to start the chat"
+{"data":[{
+	"applicationName":"Gmail",
+	"features":[
+			{"name":"Chat",
+			"steps":["On the left bottom part of Gmail, there will be list of persons online",
+					"Click on the name of person you want to talk to",
+					"A chat window will open, Type the text to start the chat"
 					]
-				},
-				{
-					"name": "Send a mail",
-					"steps": [
+			}, 
+			{"name":"recieve a mail",
+				"steps":[
+						"There will be an notification message from Gmail to click and read the mail",
+						"You can mark this as starred Email in left function box",
+						"You can mark this in trash if this is a junk mail "
+						]
+			},
+			 {"name":"Search a mail",
+				"steps":[
+						"Click the searching box on top of the desk window",
+						"Enter email's key words or mail address in searching box",
+						"Click the filtered emails you want to search"
+						]
+			},
+			{"name":"Send a mail",
+				"steps":[
 						"Click on compose mail",
 						"Enter sender's email in To text box",
 						"Type Subject in Subject text box",
 						"Type Email content in the text box",
 						"Click on send"
+						]
+			}]
+},
+{
+	"applicationName": "Facebook",
+	"features":[
+			{"name":"Facebook Search",
+			"steps":["Type the name of person you want to search or the topic you interested in in the search text box",
+					"Search box is location of the top of the Facebook Home page"]
+			},
+			{"name":"Post your facebook",
+			"steps":[
+					"You can watch some video or images by scroll down and leave ‘like’,’command’ and ‘share’",
+					"You can post your own video and share with friends from create your story box"
+			]},
+			{"name":"Create an account and sign in",
+			"steps":[
+					"Input your name, date of birth and gender",
+					"Click sign up",
+					"After sign up, You will receive a message with your permission to turn on Notifications",
+					"You need to verify your email address or phone number on the link of the website by using the verification code in your email box or message box.",
+					"After type the code, click continue. It will show that your account has been confirmed.",
+					"There will be some friend suggestions, you can add some of them if you like."
+			]}]
+},
+{"data":[{
+	"applicationName":"Uber",
+	"features":[
+			{"name":"Ride",
+			"steps":["You can enter the locations of your destination in 'Where to' box or pin the your loaction on map",
+					"Meet your driver, you can track their arrival on the map, wait for them at your pickup location.",
+					"Make sure you’re getting into the right car with the right driver by matching the license plate, car make and model, and driver photo with what’s provided in your app.",
+					"After arrive the destination, make a payment by credit card or Uber Cash balance.",
+					"Rate the dirver, let the uber know how your trip went"
 					]
-				}
-			]
-		},
-		{
-			"applicationName": "Facebook",
-			"features": [
-				{
-					"name": "Facebook Search",
-					"steps": [
-						"Type the name of person you want to search in the search text box",
-						"Search box is location of the top of the Facebook Home page"
-					]
-				},
-				{
-					"name": "Create an account and sign in",
-					"steps": [
-						"Input your date of birth and gender",
+			},
+			{"name":"Create Account and sign in",
+				"steps":[
+						"Input your name, location, phone number, Card information, date of birth and gender",
 						"Click sign up",
-						"After sign up, You will receive a message with your permission to turn on Notifications",
+						"After sign up, You will receive a message with your permission to turn on Notifications and locations",
 						"You need to verify your email address or phone number on the link of the website by using the verification code in your email box or message box.",
-						"After type the code, click continue. It will show that your account has been confirmed.",
-						"There will be some friend suggestions, you can add some of them if you like."
-					]
-				}
-			]
-		}
-	]
+						"After type the code, click continue. It will show that your account has been confirmed."
+						]
+			}]
+},
+{
+	"applicationName": "WeChat",
+	"features":[
+			{"name":"Friends circle",
+			"steps":["You can watch your friends post in discovery page of friend circle",
+			"You can also share your own post with the camera icon on the right top of the page"]
+			},
+			{"name":"WeChat Search",
+			"steps":["Type the name of person or the content want to search in the search text box",
+					"Search box is location of the top of the WeChat"]
+			},
+			{"name":"WeChat friend Search",
+			"steps":["Type the name ID of person or phone number you want to search in the new friend search text box",
+					"Search new friend box is location of the top of the contact page",
+					"You can also add the friend face to face by QR code"]
+			},
+			{"name":"Create an account and sign in",
+			"steps":[
+					"Input your name location date of birth and gender",
+					"Click sign up,sometimes you might need your friends to help you do the verifacation",
+					"After sign up, You will receive a message with the permission to turn on Notifications",
+					"You need to verify your email address or phone number on the link of the website by using the verification code in your email box or message box.",
+					"After type the code, click continue. It will show that your account has been confirmed.",
+					"There will be some friend suggestions from your phone contact, you can add some of them if you like."
+			]}]
 }
-=======
-{"data":[{"applicationName":"Gmail","features":[{"name":"Chat","steps":["On the left bottom part of Gmail, there will be list of persons online","Click on the name of person you want to talk to","A chat window will open, Type the text to start the chat"]},{"name":"Send a mail","steps":["Click on compose mail","Enter sender's email in To text box","Type Subject in Subject text box","Type Email content in the text box","Click on send"]}]},{"applicationName":"Facebook","features":[{"name":"Facebook Search","steps":["Type the name of person you want to search in the search text box","Search box is location of the top of the Facebook Home page"]},{"name":"Create an account and sign in","steps":["Input your date of birth and gender","Click sign up","After sign up, You will receive a message with your permission to turn on Notifications","You need to verify your email address or phone number on the link of the website by using the verification code in your email box or message box.","After type the code, click continue. It will show that your account has been confirmed.","There will be some friend suggestions, you can add some of them if you like."]}]},{"applicationName":"Instagram","features":[{"name":"Post a picture","steps":["Upload it to the instagram","Select pic from the camera album"]},{"name":"Share a video","steps":["Click on arrow symbol of the app","share with friend"]}]}]}
->>>>>>> Stashed changes
+]}
+]}
