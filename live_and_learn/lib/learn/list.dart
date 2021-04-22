@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:live_and_learn/entity/tutorial.dart';
 import 'package:live_and_learn/mock/example.dart';
+import 'package:live_and_learn/mock/gmail.dart';
 import 'package:live_and_learn/tutorial/tutorial.dart';
 
 class LeanListView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _LeanListViewState extends State<LeanListView> {
       body: ListView(
         children: [
           this._buildTile(exampleTutorial, 0, 1),
+          this._buildTile(gmailChatTutorial, 1, 2),
         ],
       ),
     );
@@ -45,7 +47,7 @@ class _LeanListViewState extends State<LeanListView> {
             MaterialPageRoute(
               builder: (BuildContext context) {
                 return TutorialView(
-                  tutorial: exampleTutorial,
+                  tutorial: tutorial,
                 );
               },
             ),
