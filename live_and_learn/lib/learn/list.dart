@@ -3,6 +3,7 @@ import 'package:live_and_learn/entity/tutorial.dart';
 import 'package:live_and_learn/mock/example.dart';
 import 'package:live_and_learn/mock/facebook.dart';
 import 'package:live_and_learn/mock/gmail.dart';
+import 'package:live_and_learn/mock/instagram.dart';
 import 'package:live_and_learn/tutorial/tutorial.dart';
 
 class LeanListView extends StatefulWidget {
@@ -17,6 +18,7 @@ class _LeanListViewState extends State<LeanListView> {
     gmailSendTutorial,
     facebookSearchTutorial,
     facebookCreateAndSignInTutorial,
+    instagramSignUpTutorial,
   ];
 
   @override
