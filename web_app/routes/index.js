@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/addFeature',function (req, res, next) {
-  if(req.body.length > 0 ){
     var temp={"applicationName":"","features":[]};
     var feature = {"name":"","steps":[]};
     var steps;
@@ -40,12 +39,12 @@ router.post('/addFeature',function (req, res, next) {
     function finished(err)
     {
         console.log('success');
-    } }
+        
+    }
     res.redirect("/");
 })
 
 router.post('/showList',function (req, res, next) {
-
   var rawdata = JSON.parse(fs.readFileSync('file.json'));
   res.send({rawdata});
 

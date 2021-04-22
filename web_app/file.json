@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
 	"data": [
 		{
@@ -48,3 +49,6 @@
 		}
 	]
 }
+=======
+{"data":[{"applicationName":"Gmail","features":[{"name":"Chat","steps":["On the left bottom part of Gmail, there will be list of persons online","Click on the name of person you want to talk to","A chat window will open, Type the text to start the chat"]},{"name":"Send a mail","steps":["Click on compose mail","Enter sender's email in To text box","Type Subject in Subject text box","Type Email content in the text box","Click on send"]}]},{"applicationName":"Facebook","features":[{"name":"Facebook Search","steps":["Type the name of person you want to search in the search text box","Search box is location of the top of the Facebook Home page"]},{"name":"Create an account and sign in","steps":["Input your date of birth and gender","Click sign up","After sign up, You will receive a message with your permission to turn on Notifications","You need to verify your email address or phone number on the link of the website by using the verification code in your email box or message box.","After type the code, click continue. It will show that your account has been confirmed.","There will be some friend suggestions, you can add some of them if you like."]}]},{"applicationName":"Instagram","features":[{"name":"Post a picture","steps":["Upload it to the instagram","Select pic from the camera album"]},{"name":"Share a video","steps":["Click on arrow symbol of the app","share with friend"]}]}]}
+>>>>>>> Stashed changes
