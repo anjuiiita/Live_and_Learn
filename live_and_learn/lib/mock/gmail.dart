@@ -3,9 +3,9 @@ import 'package:live_and_learn/entity/tutorial-step.dart';
 import 'package:live_and_learn/entity/tutorial.dart';
 
 final TutorialEntity gmailChatTutorial = TutorialEntity(
-  name: "Chat in Gmail",
+  name: "Chat",
   application: "Gmail",
-  schema: "tel:5152944111",
+  schema: "mailto:test",
   steps: [
     TutorialStep(
       name: "Find the button",
@@ -28,6 +28,54 @@ final TutorialEntity gmailChatTutorial = TutorialEntity(
       elements: [
         TutorialTextElement(
           'A chat window will open, Type the text to start the chat',
+        ),
+      ],
+    ),
+  ],
+);
+
+final TutorialEntity gmailSendTutorial = TutorialEntity(
+  name: "Send email",
+  application: "Gmail",
+  schema: "mailto:test",
+  steps: [
+    TutorialStep(
+      name: "Click Button",
+      elements: [
+        TutorialTextElement(
+          'Click on compose mail',
+        ),
+      ],
+    ),
+    TutorialStep(
+      name: "Set Sender",
+      elements: [
+        TutorialTextElement(
+          'Enter sender\'s email in To text box',
+        ),
+      ],
+    ),
+    TutorialStep(
+      name: "Set Subject",
+      elements: [
+        TutorialTextElement(
+          'Type Subject in Subject text box',
+        ),
+      ],
+    ),
+    TutorialStep(
+      name: "Set Content",
+      elements: [
+        TutorialTextElement(
+          'Type Email content in the text box',
+        ),
+      ],
+    ),
+    TutorialStep(
+      name: "Send",
+      elements: [
+        TutorialTextElement(
+          'Click on send',
         ),
       ],
     ),

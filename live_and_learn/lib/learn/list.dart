@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:live_and_learn/entity/tutorial.dart';
 import 'package:live_and_learn/mock/example.dart';
+import 'package:live_and_learn/mock/facebook.dart';
 import 'package:live_and_learn/mock/gmail.dart';
 import 'package:live_and_learn/tutorial/tutorial.dart';
 
@@ -10,22 +11,35 @@ class LeanListView extends StatefulWidget {
 }
 
 class _LeanListViewState extends State<LeanListView> {
+  final List<TutorialEntity> _tutorialList = [
+    exampleTutorial,
+    gmailChatTutorial,
+    gmailSendTutorial,
+    facebookSearchTutorial,
+    facebookCreateAndSignInTutorial,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("All Tutorials"),
       ),
-      body: ListView(
-        children: [
-          this._buildTile(exampleTutorial, 0, 1),
-          this._buildTile(gmailChatTutorial, 1, 2),
-        ],
+      body: ListView.builder(
+        itemCount: this._tutorialList.length,
+        itemBuilder: (BuildContext context, int index) {
+          return this._buildTile(
+            this._tutorialList[index],
+            index,
+          );
+        },
       ),
     );
   }
 
-  Widget _buildTile(TutorialEntity tutorial, int index, int total) {
+  Widget _buildTile(TutorialEntity tutorial, int index) {
+    final int total = this._tutorialList.length;
+
     return Semantics(
       value:
           "Tutorial name: ${tutorial.name}, application name: ${tutorial.application}",
