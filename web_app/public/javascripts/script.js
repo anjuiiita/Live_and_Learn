@@ -9,6 +9,7 @@ var id7 = 1;
 var id8 = 1;
 var id9 = 1;
 var id10 = 1;
+var isImageButtonAdded = false;
 
 $(document).on("click", "#btn1", function () {
   if (id <= 10) {
@@ -19,9 +20,9 @@ $(document).on("click", "#btn1", function () {
       id +
       '"/><div id="steps' +
       id +
-      '"><button type="button" id="btn3' +
+      '"><span id="buttons"><button type="button" id="btn3' +
       id +
-      '" class="btn btn-primary btn-block mt-2 w-25"> Add steps </button></div></div>';
+      '" class="btn btn-primary mt-2 w-25"> Add steps </button> </span></div></div>';
     $("#moreFeatures").append($(newFeature).html());
 
     id++;
@@ -34,6 +35,12 @@ $(document).on("click", "#btn31", function () {
       '<div><input type="text" class="form-control mt-2" placeholder="Feature Steps" name="Steps1'+id1 +'"/></div>';
     $("#steps1").prepend($(newFeature).html());
     id1++;
+  }
+  if (!isImageButtonAdded) {
+    var newFeature = 
+      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+    $("#buttons").append($(newFeature).html());
+    isImageButtonAdded = true;
   }
 });
 
