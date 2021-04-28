@@ -36,14 +36,16 @@ $(document).on("click", "#btn1", function () {
 $(document).on("click", "#btn31", function () {
   if (id1 <= 10) {
     var newFeature =
-      '<div><input type="text" class="form-control mt-2" placeholder="Feature Steps" name="Steps1'+id1 +'"/></div>';
+      '<div><input type="text" class="form-control mt-2" placeholder="Feature Steps" name="Steps1'+id1 +'"/> <input type="file" id="file" style="display:none;" /></div>';
     $("#steps1").prepend($(newFeature).html());
     id1++;
   }
   //show image button when AddStep is clicked at the first time for the first feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" onclick="fileUpload();" id="imageButton1' +
+      id1 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons1").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -59,7 +61,9 @@ $(document).on("click", "#btn32", function () {
   //show image button when AddStep is clicked at the first time for the second feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton2' +
+      id2 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons2").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -74,7 +78,9 @@ $(document).on("click", "#btn33", function () {
   //show image button when AddStep is clicked at the first time for the third feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton3' +
+      id3 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons3").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -89,7 +95,9 @@ $(document).on("click", "#btn34", function () {
   //show image button when AddStep is clicked at the first time for the 4th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton4' +
+      id4 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons4").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -104,7 +112,9 @@ $(document).on("click", "#btn35", function () {
   //show image button when AddStep is clicked at the first time for the 5th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton5' +
+      id5 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons5").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -119,7 +129,9 @@ $(document).on("click", "#btn36", function () {
   //show image button when AddStep is clicked at the first time for the 6th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton6' +
+      id6 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons6").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -134,7 +146,9 @@ $(document).on("click", "#btn37", function () {
   //show image button when AddStep is clicked at the first time for the 7th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton7' +
+      id7 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons7").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -149,7 +163,9 @@ $(document).on("click", "#btn38", function () {
   //show image button when AddStep is clicked at the first time for the 8th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton8' +
+      id8 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons8").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -164,7 +180,9 @@ $(document).on("click", "#btn39", function () {
   //show image button when AddStep is clicked at the first time for the 9th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton9' +
+      id9 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons9").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -179,7 +197,9 @@ $(document).on("click", "#btn310", function () {
   //show image button when AddStep is clicked at the first time for the 10th feature
   if (!isImageButtonAdded) {
     var newFeature = 
-      '<div><button type="button" id="imageButton" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '<div><button type="button" id="imageButton10' +
+      id10 + 
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
     $("#buttons10").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -214,4 +234,11 @@ $(document).on("click", "#btnList", function () {
         );
         
 });
+
+// $(document).on("click", "#imageButton12", function () {
+//   console.log("test");
+// });
+function fileUpload() {
+  document.getElementById("file").click();
+}
 
