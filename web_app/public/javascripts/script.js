@@ -45,7 +45,7 @@ $(document).on("click", "#btn31", function () {
     var newFeature = 
       '<div><button type="button" onclick="fileUpload();" id="imageButton1' +
       id1 + 
-      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image for this step </button></div>';
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image </button></div>';
     $("#buttons1").append($(newFeature).html());
     isImageButtonAdded = true;
   }
@@ -235,10 +235,23 @@ $(document).on("click", "#btnList", function () {
         
 });
 
-// $(document).on("click", "#imageButton12", function () {
-//   console.log("test");
-// });
+//onClick function for the upload image button
 function fileUpload() {
-  document.getElementById("file").click();
+  $("#file").click();
 }
+//onChange function for the file input
+$(document).on("change", "#file", function () {
+  var fileInput = $('#file');
+  var filename = fileInput[0].files[0].name;
+  //replace the feature step with the file name
+  //***** This is just for demo video ******/
+  var i = 1;
+  var element;
+  while (!document.getElementsByName("Steps1"+i)[0].value == "") {
+    i ++;
+  }
+  element = document.getElementsByName("Steps1"+i);
+  element[0].value = filename;
+  console.log(element);
+});
 
