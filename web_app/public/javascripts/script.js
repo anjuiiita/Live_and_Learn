@@ -45,7 +45,7 @@ $(document).on("click", "#btn31", function () {
     var newFeature = 
       '<div><button type="button" onclick="fileUpload();" id="imageButton1' +
       id1 + 
-      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image </button></div>';
+      '" class="btn btn-primary btn-block mt-2 w-50" style="float: right"> Upload image/video </button></div>';
     $("#buttons1").append($(newFeature).html());
     isImageButtonAdded = true;
   }
